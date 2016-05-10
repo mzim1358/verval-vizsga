@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-app.set('PORT', 3000);
+app.set('PORT', process.env.PORT || 3000);
 var tomb = [ "Anna",
 			"Brigitta",
 			"Cecília",
