@@ -1,0 +1,6 @@
+{
+  "author": "Marton Zete Ors",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
