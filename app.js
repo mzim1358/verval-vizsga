@@ -22,7 +22,7 @@ var server = http.createServer(app);
 
 app.get('/',function(request, response){
   
-  response.status(200).send(tomb[2]);
+  response.status(200).send(tomb[4]);
 })
 
 server.listen(app.get('PORT'));
