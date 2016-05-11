@@ -19,10 +19,11 @@ var tomb = [ "Anna",
 			"Orsolya"];
 
 var server = http.createServer(app);
+app.use(express.static(__dirname));
 
-app.get('/',function(request, response){
-  
-  response.status(200).send(tomb[4]);
+app.get('/name',function(request, response){
+  var index = Math.floor(Math.random() * tomb.length);
+  response.status(200).send(tomb[index]);
 })
 
 server.listen(app.get('PORT'));

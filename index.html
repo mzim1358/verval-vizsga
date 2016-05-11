@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8">
+	</head>
+	<body>
+		<label id="name">Name:</label>
+		<script>
+			function send(){	
+				
+				var xmlhttp;
+				
+				if (window.XMLHttpRequest){
+				  xmlhttp=new XMLHttpRequest();
+				}else{
+				  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				
+				xmlhttp.onreadystatechange=function(){
+				  	if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					    if(xmlhttp.responseText != "Error"){
+					    	var arr = xmlhttp.responseText;
+					    	document.getElementById("value").value=arr;
+					    }
+				  	}
+				}
+				xmlhttp.open("GET","name",true);
+		  		xmlhttp.send();
+			}
+		</script>
+		<input id="value" type="text"></input>
+		<input id="button" type="button" value="Submit" onclick="send()">
+	</body>
+</html>
